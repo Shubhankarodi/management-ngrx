@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     name: Build Angular + .NET
     env:
-     ANGULAR_PROJECT_PATH: https://github.com/Shubhankarodi/management-ngrx
+     ANGULAR_PROJECT_PATH: Shubhankarodi/management-ngrx
     steps:
     - name: Checkout code
       uses: actions/checkout@v4

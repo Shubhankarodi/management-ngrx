@@ -21,3 +21,6 @@ jobs:
     - name: Build Angular
       working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
       run: npm run build -- --configuration production
+    - name: Run tests (optional)
+      working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
+      run: npm test -- --watch=false --browsers=ChromeHeadless

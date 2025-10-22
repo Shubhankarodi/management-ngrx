@@ -4,6 +4,7 @@ on:
     branches: [ master]
 jobs:
   build:
+    name: Build Angular + .NET
     runs-on: windows-latest
     steps:
     - name: Checkout code
@@ -14,4 +15,9 @@ jobs:
           node-version: '18.x'
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-   
+    - name: Install dependencies
+      working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
+      run: npm ci
+    - name: Build Angular
+      working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
+      run: npm run build -- --configuration production

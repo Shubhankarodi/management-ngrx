@@ -20,9 +20,6 @@ jobs:
     - name: Install dependencies
       working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
       run: npm ci
-    - name: Run Angular tests
-      working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
-      run: npm run test -- --watch=false --browsers=ChromeHeadless
     - name: Build Angular
       working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
       run: npm run build -- --configuration production

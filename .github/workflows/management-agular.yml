@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     name: Build Angular + .NET
     env:
-     ANGULAR_PROJECT_PATH: .
+     ANGULAR_PROJECT_PATH: ./management-agular
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -20,6 +20,9 @@ jobs:
     - name: Install dependencies
       working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
       run: npm ci
+    - name: Run Angular tests
+      working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
+      run: npm run test -- --watch=false --browsers=ChromeHeadless
     - name: Build Angular
       working-directory: ${{ env.ANGULAR_PROJECT_PATH }}
       run: npm run build -- --configuration production

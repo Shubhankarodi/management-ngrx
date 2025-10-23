@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     name: Build Angular + .NET
     env:
-     ANGULAR_PROJECT_PATH: ./management-agular
+     ANGULAR_PROJECT_PATH: .
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
